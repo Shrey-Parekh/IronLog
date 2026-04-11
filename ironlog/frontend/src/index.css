@@ -781,3 +781,75 @@ img {
 .muscle-bar-fill.secondary {
   background: linear-gradient(90deg, var(--powder-300), var(--powder-400));
 }
+
+/* Analytics */
+.strength-chart {
+  position: relative;
+  margin-bottom: var(--space-4);
+}
+
+.exercise-line {
+  position: relative;
+  width: 100%;
+}
+
+.strength-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+}
+
+.pr-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.pr-card {
+  background: var(--pr-bg);
+  border-color: var(--pr-border);
+}
+
+.pr-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+  color: var(--pr-text);
+}
+
+.pr-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.pr-stat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.pr-stat .type-caption {
+  color: var(--pr-text);
+  opacity: 0.7;
+}
+
+.pr-stat .type-stat-sm,
+.pr-stat .type-body-sm {
+  color: var(--pr-text);
+}

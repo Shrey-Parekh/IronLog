@@ -86,15 +86,15 @@ Reference spec: `ironlog-kiro-spec.md`
   - [x] 2.5.2 Create src/hooks/useAnalytics.ts
   - [x] 2.5.3 Create src/components/VolumeChart.tsx (horizontal bar — volume per muscle group)
   - [x] 2.5.4 Create src/components/StrengthChart.tsx (line chart — e1RM over time)
-  - [-] 2.5.5 Create src/pages/Analytics.tsx (volume chart, frequency heatmap, 1RM chart, weekly volume trend, PR log)
+  - [x] 2.5.5 Create src/pages/Analytics.tsx (volume chart, frequency heatmap, 1RM chart, weekly volume trend, PR log)
 
 ---
 
 ## PHASE 3: ML Models + Background Jobs
 
 - [ ] 3.1 Celery + Redis Setup
-  - [ ] 3.1.1 Create backend/app/tasks/celery_app.py (Celery config, broker=Redis)
-  - [ ] 3.1.2 Add Celery worker service to docker-compose
+  - [x] 3.1.1 Create backend/app/tasks/celery_app.py (Celery config, broker=Redis)
+  - [x] 3.1.2 Add Celery worker service to docker-compose
   - [ ] 3.1.3 Wire finishing a session to enqueue post_session_analytics task
 
 - [ ] 3.2 Volume Analyzer
