@@ -1,0 +1,219 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Base */
+  --bg-primary: #0A0A0B;
+  --bg-secondary: #111113;
+  --bg-tertiary: #1A1A1E;
+  --bg-hover: #222228;
+  --bg-active: #2A2A32;
+  
+  /* Borders */
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-default: rgba(255, 255, 255, 0.10);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  
+  /* Text */
+  --text-primary: #ECECEF;
+  --text-secondary: #8B8B96;
+  --text-tertiary: #55555E;
+  --text-inverse: #0A0A0B;
+  
+  /* Accent: Warm Amber */
+  --accent-primary: #E8A23E;
+  --accent-hover: #D4912E;
+  --accent-muted: rgba(232, 162, 62, 0.12);
+  --accent-text: #F0B860;
+  
+  /* Semantic */
+  --success: #34D399;
+  --success-muted: rgba(52, 211, 153, 0.12);
+  --warning: #FBBF24;
+  --warning-muted: rgba(251, 191, 36, 0.12);
+  --danger: #F87171;
+  --danger-muted: rgba(248, 113, 113, 0.12);
+  --info: #60A5FA;
+  --info-muted: rgba(96, 165, 250, 0.12);
+  
+  /* Recovery spectrum */
+  --recovery-full: #34D399;
+  --recovery-good: #6EE7B7;
+  --recovery-moderate: #FBBF24;
+  --recovery-low: #FB923C;
+  --recovery-fatigued: #F87171;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.6);
+  --shadow-glow: 0 0 20px rgba(232, 162, 62, 0.15);
+  
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  
+  /* Border radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+  
+  /* Transitions */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 400ms;
+  --duration-entrance: 500ms;
+}
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+}
+
+html, body, #root {
+  background: #0A0A0B;
+  min-height: 100dvh;
+}
+
+body {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  overscroll-behavior-y: contain;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-default);
+  border-radius: var(--radius-full);
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px var(--bg-tertiary) inset !important;
+  -webkit-text-fill-color: var(--text-primary) !important;
+}
+
+::selection {
+  background: rgba(232, 162, 62, 0.3);
+  color: var(--text-primary);
+}
+
+a, button, input, select, textarea {
+  transition: color var(--duration-fast) ease,
+              background var(--duration-fast) ease,
+              border-color var(--duration-fast) ease,
+              opacity var(--duration-fast) ease;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--accent-text);
+  text-decoration: none;
+}
+
+/* Typography */
+.text-display {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 32px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+}
+
+.text-h1, .page-title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 22px;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+}
+
+.text-h2 {
+  font-size: 18px;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+  font-weight: 600;
+}
+
+.text-h3 {
+  font-size: 15px;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  font-weight: 600;
+}
+
+.text-body {
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.text-body-sm {
+  font-size: 13px;
+  line-height: 1.45;
+  font-weight: 400;
+}
+
+.text-caption {
+  font-size: 11px;
+  line-height: 1.35;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Cards */
+.card {
+  background: #111113;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 20px;
+}

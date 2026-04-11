@@ -1,0 +1,23 @@
+[
+  {"name": "chest", "display_name": "Chest", "body_region": "upper", "push_pull": "push", "default_recovery_hours": 48, "default_mrv_sets_week": 22, "default_mev_sets_week": 10},
+  {"name": "front_delt", "display_name": "Front Deltoid", "body_region": "upper", "push_pull": "push", "default_recovery_hours": 36, "default_mrv_sets_week": 12, "default_mev_sets_week": 6},
+  {"name": "side_delt", "display_name": "Side Deltoid", "body_region": "upper", "push_pull": "push", "default_recovery_hours": 24, "default_mrv_sets_week": 26, "default_mev_sets_week": 8},
+  {"name": "rear_delt", "display_name": "Rear Deltoid", "body_region": "upper", "push_pull": "pull", "default_recovery_hours": 24, "default_mrv_sets_week": 22, "default_mev_sets_week": 8},
+  {"name": "long_head_tricep", "display_name": "Tricep (Long Head)", "body_region": "upper", "push_pull": "push", "default_recovery_hours": 36, "default_mrv_sets_week": 18, "default_mev_sets_week": 6},
+  {"name": "lateral_head_tricep", "display_name": "Tricep (Lateral Head)", "body_region": "upper", "push_pull": "push", "default_recovery_hours": 36, "default_mrv_sets_week": 18, "default_mev_sets_week": 6},
+  {"name": "biceps_long", "display_name": "Bicep (Long Head)", "body_region": "upper", "push_pull": "pull", "default_recovery_hours": 36, "default_mrv_sets_week": 22, "default_mev_sets_week": 8},
+  {"name": "biceps_short", "display_name": "Bicep (Short Head)", "body_region": "upper", "push_pull": "pull", "default_recovery_hours": 36, "default_mrv_sets_week": 22, "default_mev_sets_week": 8},
+  {"name": "brachialis", "display_name": "Brachialis", "body_region": "upper", "push_pull": "pull", "default_recovery_hours": 36, "default_mrv_sets_week": 18, "default_mev_sets_week": 6},
+  {"name": "forearms", "display_name": "Forearms", "body_region": "upper", "push_pull": "pull", "default_recovery_hours": 24, "default_mrv_sets_week": 16, "default_mev_sets_week": 4},
+  {"name": "lats", "display_name": "Latissimus Dorsi", "body_region": "upper", "push_pull": "pull", "default_recovery_hours": 48, "default_mrv_sets_week": 22, "default_mev_sets_week": 10},
+  {"name": "upper_back", "display_name": "Upper Back (Traps/Rhomboids)", "body_region": "upper", "push_pull": "pull", "default_recovery_hours": 48, "default_mrv_sets_week": 22, "default_mev_sets_week": 10},
+  {"name": "quads", "display_name": "Quadriceps", "body_region": "lower", "push_pull": null, "default_recovery_hours": 72, "default_mrv_sets_week": 20, "default_mev_sets_week": 8},
+  {"name": "hamstrings", "display_name": "Hamstrings", "body_region": "lower", "push_pull": null, "default_recovery_hours": 72, "default_mrv_sets_week": 16, "default_mev_sets_week": 6},
+  {"name": "glutes", "display_name": "Glutes", "body_region": "lower", "push_pull": null, "default_recovery_hours": 72, "default_mrv_sets_week": 16, "default_mev_sets_week": 4},
+  {"name": "calves", "display_name": "Calves", "body_region": "lower", "push_pull": null, "default_recovery_hours": 36, "default_mrv_sets_week": 16, "default_mev_sets_week": 6},
+  {"name": "hip_flexors", "display_name": "Hip Flexors", "body_region": "lower", "push_pull": null, "default_recovery_hours": 48, "default_mrv_sets_week": 10, "default_mev_sets_week": 2},
+  {"name": "adductors", "display_name": "Adductors", "body_region": "lower", "push_pull": null, "default_recovery_hours": 48, "default_mrv_sets_week": 14, "default_mev_sets_week": 4},
+  {"name": "abs", "display_name": "Abdominals", "body_region": "core", "push_pull": null, "default_recovery_hours": 24, "default_mrv_sets_week": 20, "default_mev_sets_week": 6},
+  {"name": "obliques", "display_name": "Obliques", "body_region": "core", "push_pull": null, "default_recovery_hours": 24, "default_mrv_sets_week": 16, "default_mev_sets_week": 4},
+  {"name": "lower_back", "display_name": "Lower Back (Erectors)", "body_region": "core", "push_pull": null, "default_recovery_hours": 72, "default_mrv_sets_week": 12, "default_mev_sets_week": 4}
+]

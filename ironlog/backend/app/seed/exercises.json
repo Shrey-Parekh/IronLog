@@ -1,0 +1,983 @@
+[
+  {
+    "name": "barbell_bench_press",
+    "display_name": "Barbell Bench Press",
+    "movement_pattern": "horizontal_push",
+    "equipment": "barbell",
+    "is_compound": true,
+    "is_unilateral": false,
+    "supports_1rm": true,
+    "difficulty": "intermediate",
+    "instructions": "Lie on flat bench, grip bar slightly wider than shoulder width. Lower bar to mid-chest. Press back up.",
+    "tips": "Keep shoulder blades retracted. Feet flat on floor. Full ROM.",
+    "common_mistakes": "Bouncing bar off chest, flaring elbows, lifting hips.",
+    "muscles": [
+      {
+        "muscle": "chest",
+        "role": "primary",
+        "activation_pct": 1.0
+      },
+      {
+        "muscle": "front_delt",
+        "role": "secondary",
+        "activation_pct": 0.6
+      },
+      {
+        "muscle": "long_head_tricep",
+        "role": "secondary",
+        "activation_pct": 0.4
+      }
+    ],
+    "substitutions": [
+      {
+        "exercise": "dumbbell_bench_press",
+        "similarity": 0.9,
+        "reason": "Same pattern, greater ROM"
+      },
+      {
+        "exercise": "machine_chest_press",
+        "similarity": 0.7,
+        "reason": "Machine-guided"
+      }
+    ]
+  },
+  {
+    "name": "dumbbell_bench_press",
+    "display_name": "Dumbbell Bench Press",
+    "movement_pattern": "horizontal_push",
+    "equipment": "dumbbell",
+    "is_compound": true,
+    "is_unilateral": false,
+    "supports_1rm": true,
+    "difficulty": "intermediate",
+    "instructions": "Lie on bench with dumbbells. Press up to full extension. Lower with control.",
+    "tips": "Greater ROM than barbell. Keep wrists neutral.",
+    "common_mistakes": "Flaring elbows too wide, uneven pressing.",
+    "muscles": [
+      {
+        "muscle": "chest",
+        "role": "primary",
+        "activation_pct": 1.0
+      },
+      {
+        "muscle": "front_delt",
+        "role": "secondary",
+        "activation_pct": 0.6
+      },
+      {
+        "muscle": "long_head_tricep",
+        "role": "secondary",
+        "activation_pct": 0.4
+      }
+    ],
+    "substitutions": [
+      {
+        "exercise": "barbell_bench_press",
+        "similarity": 0.9,
+        "reason": "Same pattern with barbell"
+      },
+      {
+        "exercise": "incline_dumbbell_press",
+        "similarity": 0.8,
+        "reason": "Same equipment, incline angle"
+      }
+    ]
+  },
+  {
+    "name": "incline_barbell_press",
+    "display_name": "Incline Barbell Press",
+    "movement_pattern": "horizontal_push",
+    "equipment": "barbell",
+    "is_compound": true,
+    "is_unilateral": false,
+    "supports_1rm": true,
+    "difficulty": "intermediate",
+    "instructions": "Set bench to 30-45 degrees. Press bar from upper chest.",
+    "tips": "Targets upper chest more. Keep back against bench.",
+    "common_mistakes": "Bench too steep (becomes shoulder press), arching back.",
+    "muscles": [
+      {
+        "muscle": "chest",
+        "role": "primary",
+        "activation_pct": 1.0
+      },
+      {
+        "muscle": "front_delt",
+        "role": "secondary",
+        "activation_pct": 0.7
+      },
+      {
+        "muscle": "long_head_tricep",
+        "role": "secondary",
+        "activation_pct": 0.4
+      }
+    ],
+    "substitutions": [
+      {
+        "exercise": "incline_dumbbell_press",
+        "similarity": 0.9,
+        "reason": "Same angle with dumbbells"
+      },
+      {
+        "exercise": "barbell_bench_press",
+        "similarity": 0.8,
+        "reason": "Flat bench variation"
+      }
+    ]
+  },
+  {
+    "name": "incline_dumbbell_press",
+    "display_name": "Incline Dumbbell Press",
+    "movement_pattern": "horizontal_push",
+    "equipment": "dumbbell",
+    "is_compound": true,
+    "is_unilateral": false,
+    "supports_1rm": true,
+    "difficulty": "intermediate",
+    "instructions": "Set bench to 30-45 degrees. Press dumbbells from upper chest.",
+    "tips": "Better ROM than barbell. Targets upper chest.",
+    "common_mistakes": "Bench too steep, flaring elbows.",
+    "muscles": [
+      {
+        "muscle": "chest",
+        "role": "primary",
+        "activation_pct": 1.0
+      },
+      {
+        "muscle": "front_delt",
+        "role": "secondary",
+        "activation_pct": 0.7
+      },
+      {
+        "muscle": "long_head_tricep",
+        "role": "secondary",
+        "activation_pct": 0.4
+      }
+    ],
+    "substitutions": [
+      {
+        "exercise": "incline_barbell_press",
+        "similarity": 0.9,
+        "reason": "Same angle with barbell"
+      },
+      {
+        "exercise": "dumbbell_bench_press",
+        "similarity": 0.8,
+        "reason": "Flat bench variation"
+      }
+    ]
+  },
+  {
+    "name": "decline_barbell_press",
+    "display_name": "Decline Barbell Press",
+    "movement_pattern": "horizontal_push",
+    "equipment": "barbell",
+    "is_compound": true,
+    "is_unilateral": false,
+    "supports_1rm": true,
+    "difficulty": "intermediate",
+    "instructions": "Set bench to decline. Press bar from lower chest.",
+    "tips": "Targets lower chest. Secure feet.",
+    "common_mistakes": "Too much decline, losing control.",
+    "muscles": [
+      {
+        "muscle": "chest",
+        "role": "primary",
+        "activation_pct": 1.0
+      },
+      {
+        "muscle": "front_delt",
+        "role": "secondary",
+        "activation_pct": 0.5
+      },
+      {
+        "muscle": "long_head_tricep",
+        "role": "secondary",
+        "activation_pct": 0.4
+      }
+    ],
+    "substitutions": [
+      {
+        "exercise": "barbell_bench_press",
+        "similarity": 0.8,
+        "reason": "Flat bench variation"
+      },
+      {
+        "exercise": "chest_dip",
+        "similarity": 0.7,
+        "reason": "Both target lower chest"
+      }
+    ]
+  },
+  {
+    "name": "dumbbell_fly",
+    "display_name": "Dumbbell Fly",
+    "movement_pattern": "horizontal_push",
+    "equipment": "dumbbell",
+    "is_compound": false,
+    "is_unilateral": false,
+    "supports_1rm": false,
+    "difficulty": "beginner",
+    "instructions": "Lie on bench. Lower dumbbells out to sides with slight elbow bend. Bring back together.",
+    "tips": "Stretch at bottom. Slight elbow bend throughout.",
+    "common_mistakes": "Too much elbow bend (becomes press), going too heavy.",
+    "muscles": [
+      {
+        "muscle": "chest",
+        "role": "primary",
+        "activation_pct": 1.0
+      },
+      {
+        "muscle": "front_delt",
+        "role": "secondary",
+        "activation_pct": 0.3
+      }
+    ],
+    "substitutions": [
+      {
+        "exercise": "cable_fly",
+        "similarity": 0.9,
+        "reason": "Same movement with cables"
+      },
+      {
+        "exercise": "pec_deck",
+        "similarity": 0.8,
+        "reason": "Machine fly variation"
+      }
+    ]
+  },
+  {
+    "name": "cable_fly",
+    "display_name": "Cable Fly",
+    "movement_pattern": "horizontal_push",
+    "equipment": "cable",
+    "is_compound": false,
+    "is_unilateral": false,
+    "supports_1rm": false,
+    "difficulty": "beginner",
+    "instructions": "Set cables to chest height. Bring handles together in front of chest.",
+    "tips": "Constant tension throughout. Control the negative.",
+    "common_mistakes": "Using momentum, not controlling the stretch.",
+    "muscles": [
+      {
+        "muscle": "chest",
+        "role": "primary",
+        "activation_pct": 1.0
+      },
+      {
+        "muscle": "front_delt",
+        "role": "secondary",
+        "activation_pct": 0.3
+      }
+    ],
+    "substitutions": [
+      {
+        "exercise": "dumbbell_fly",
+        "similarity": 0.9,
+        "reason": "Same movement with dumbbells"
+      },
+      {
+        "exercise": "pec_deck",
+        "similarity": 0.8,
+        "reason": "Machine fly"
+      }
+    ]
+  },
+  {
+    "name": "pec_deck",
+    "display_name": "Pec Deck Machine",
+    "movement_pattern": "horizontal_push",
+    "equipment": "machine",
+    "is_compound": false,
+    "is_unilateral": false,
+    "supports_1rm": false,
+    "difficulty": "beginner",
+    "instructions": "Sit in machine. Bring pads together in front of chest.",
+    "tips": "Good for beginners. Focus on squeeze.",
+    "common_mistakes": "Partial ROM, using momentum.",
+    "muscles": [
+      {
+        "muscle": "chest",
+        "role": "primary",
+        "activation_pct": 1.0
+      },
+      {
+        "muscle": "front_delt",
+        "role": "secondary",
+        "activation_pct": 0.2
+      }
+    ],
+    "substitutions": [
+      {
+        "exercise": "cable_fly",
+        "similarity": 0.8,
+        "reason": "Cable fly variation"
+      },
+      {
+        "exercise": "dumbbell_fly",
+        "similarity": 0.8,
+        "reason": "Free weight fly"
+      }
+    ]
+  },
+  {
+    "name": "machine_chest_press",
+    "display_name": "Machine Chest Press",
+    "movement_pattern": "horizontal_push",
+    "equipment": "machine",
+    "is_compound": true,
+    "is_unilateral": false,
+    "supports_1rm": false,
+    "difficulty": "beginner",
+    "instructions": "Sit in machine. Press handles forward to full extension.",
+    "tips": "Good for beginners. Adjust seat height.",
+    "common_mistakes": "Partial ROM, not adjusting seat properly.",
+    "muscles": [
+      {
+        "muscle": "chest",
+        "role": "primary",
+        "activation_pct": 1.0
+      },
+      {
+        "muscle": "front_delt",
+        "role": "secondary",
+        "activation_pct": 0.6
+      },
+      {
+        "muscle": "long_head_tricep",
+        "role": "secondary",
+        "activation_pct": 0.4
+      }
+    ],
+    "substitutions": [
+      {
+        "exercise": "barbell_bench_press",
+        "similarity": 0.7,
+        "reason": "Free weight press"
+      },
+      {
+        "exercise": "dumbbell_bench_press",
+        "similarity": 0.7,
+        "reason": "Free weight press"
+      }
+    ]
+  },
+  {
+    "name": "push_up",
+    "display_name": "Push Up",
+    "movement_pattern": "horizontal_push",
+    "equipment": "bodyweight",
+    "is_compound": true,
+    "is_unilateral": false,
+    "supports_1rm": false,
+    "difficulty": "beginner",
+    "instructions": "Hands shoulder-width. Lower chest to floor. Press back up.",
+    "tips": "Keep core tight. Full ROM.",
+    "common_mistakes": "Hips sagging, partial ROM, flaring elbows.",
+    "muscles": [
+      {
+        "muscle": "chest",
+        "role": "primary",
+        "activation_pct": 1.0
+      },
+      {
+        "muscle": "front_delt",
+        "role": "secondary",
+        "activation_pct": 0.5
+      },
+      {
+        "muscle": "long_head_tricep",
+        "role": "secondary",
+        "activation_pct": 0.4
+      },
+      {
+        "muscle": "abs",
+        "role": "stabilizer",
+        "activation_pct": 0.3
+      }
+    ],
+    "substitutions": [
+      {
+        "exercise": "barbell_bench_press",
+        "similarity": 0.7,
+        "reason": "Same push pattern"
+      },
+      {
+        "exercise": "dumbbell_bench_press",
+        "similarity": 0.7,
+        "reason": "Same push pattern"
+      }
+    ]
+  },
+  {
+    "name": "chest_dip",
+    "display_name": "Chest Dip",
+    "movement_pattern": "horizontal_push",
+    "equipment": "bodyweight",
+    "is_compound": true,
+    "is_unilateral": false,
+    "supports_1rm": false,
+    "difficulty": "intermediate",
+    "instructions": "Lean forward on dip bars. Lower until stretch in chest. Press back up.",
+    "tips": "Forward lean targets chest. Full ROM.",
+    "common_mistakes": "Staying too upright (becomes tricep dip), partial ROM.",
+    "muscles": [
+      {
+        "muscle": "chest",
+        "role": "primary",
+        "activation_pct": 1.0
+      },
+      {
+        "muscle": "front_delt",
+        "role": "secondary",
+        "activation_pct": 0.6
+      },
+      {
+        "muscle": "long_head_tricep",
+        "role": "secondary",
+        "activation_pct": 0.5
+      }
+    ],
+    "substitutions": [
+      {
+        "exercise": "decline_barbell_press",
+        "similarity": 0.7,
+        "reason": "Both target lower chest"
+      },
+      {
+        "exercise": "tricep_dip",
+        "similarity": 0.7,
+        "reason": "Same movement, upright torso"
+      }
+    ]
+  },
+  {
+    "name": "incline_cable_fly",
+    "display_name": "Incline Cable Fly",
+    "movement_pattern": "horizontal_push",
+    "equipment": "cable",
+    "is_compound": false,
+    "is_unilateral": false,
+    "supports_1rm": false,
+    "difficulty": "beginner",
+    "instructions": "Set cables low. Bring handles up and together targeting upper chest.",
+    "tips": "Targets upper chest. Constant tension.",
+    "common_mistakes": "Using momentum, not controlling stretch.",
+    "muscles": [
+      {
+        "muscle": "chest",
+        "role": "primary",
+        "activation_pct": 1.0
+      },
+      {
+        "muscle": "front_delt",
+        "role": "secondary",
+        "activation_pct": 0.4
+      }
+    ],
+    "substitutions": [
+      {
+        "exercise": "cable_fly",
+        "similarity": 0.9,
+        "reason": "Same movement, different angle"
+      },
+      {
+        "exercise": "incline_dumbbell_press",
+        "similarity": 0.6,
+        "reason": "Upper chest focus"
+      }
+    ]
+  },
+  {
+    "name": "decline_cable_fly",
+    "display_name": "Decline Cable Fly",
+    "movement_pattern": "horizontal_push",
+    "equipment": "cable",
+    "is_compound": false,
+    "is_unilateral": false,
+    "supports_1rm": false,
+    "difficulty": "beginner",
+    "instructions": "Set cables high. Bring handles down and together targeting lower chest.",
+    "tips": "Targets lower chest. Constant tension.",
+    "common_mistakes": "Using momentum, not controlling stretch.",
+    "muscles": [
+      {
+        "muscle": "chest",
+        "role": "primary",
+        "activation_pct": 1.0
+      },
+      {
+        "muscle": "front_delt",
+        "role": "secondary",
+        "activation_pct": 0.3
+      }
+    ],
+    "substitutions": [
+      {
+        "exercise": "cable_fly",
+        "similarity": 0.9,
+        "reason": "Same movement, different angle"
+      },
+      {
+        "exercise": "chest_dip",
+        "similarity": 0.6,
+        "reason": "Lower chest focus"
+      }
+    ]
+  },
+  {
+    "name": "svend_press",
+    "display_name": "Svend Press",
+    "movement_pattern": "horizontal_push",
+    "equipment": "dumbbell",
+    "is_compound": false,
+    "is_unilateral": false,
+    "supports_1rm": false,
+    "difficulty": "beginner",
+    "instructions": "Hold plates together at chest. Press forward squeezing plates.",
+    "tips": "Focus on chest squeeze. Light weight.",
+    "common_mistakes": "Using too much weight, not squeezing.",
+    "muscles": [
+      {
+        "muscle": "chest",
+        "role": "primary",
+        "activation_pct": 1.0
+      },
+      {
+        "muscle": "front_delt",
+        "role": "secondary",
+        "activation_pct": 0.3
+      }
+    ],
+    "substitutions": [
+      {
+        "exercise": "cable_fly",
+        "similarity": 0.6,
+        "reason": "Both emphasize squeeze"
+      },
+      {
+        "exercise": "pec_deck",
+        "similarity": 0.6,
+        "reason": "Both emphasize squeeze"
+      }
+    ]
+  },
+  {
+    "name": "landmine_press",
+    "display_name": "Landmine Press",
+    "movement_pattern": "horizontal_push",
+    "equipment": "barbell",
+    "is_compound": true,
+    "is_unilateral": true,
+    "supports_1rm": false,
+    "difficulty": "intermediate",
+    "instructions": "Hold end of landmine barbell. Press forward and up.",
+    "tips": "Unique angle. Good for shoulder health.",
+    "common_mistakes": "Not bracing core, using momentum.",
+    "muscles": [
+      {
+        "muscle": "chest",
+        "role": "primary",
+        "activation_pct": 1.0
+      },
+      {
+        "muscle": "front_delt",
+        "role": "secondary",
+        "activation_pct": 0.7
+      },
+      {
+        "muscle": "long_head_tricep",
+        "role": "secondary",
+        "activation_pct": 0.4
+      },
+      {
+        "muscle": "abs",
+        "role": "stabilizer",
+        "activation_pct": 0.3
+      }
+    ],
+    "substitutions": [
+      {
+        "exercise": "dumbbell_bench_press",
+        "similarity": 0.6,
+        "reason": "Pressing movement"
+      },
+      {
+        "exercise": "incline_dumbbell_press",
+        "similarity": 0.6,
+        "reason": "Similar angle"
+      }
+    ]
+  },
+  {
+    "name": "barbell_row",
+    "display_name": "Barbell Row",
+    "movement_pattern": "horizontal_pull",
+    "equipment": "barbell",
+    "is_compound": true,
+    "is_unilateral": false,
+    "supports_1rm": true,
+    "difficulty": "intermediate",
+    "instructions": "Hinge at hips. Pull bar to lower chest. Lower with control.",
+    "tips": "Keep back flat. Pull elbows back.",
+    "common_mistakes": "Rounding back, using momentum, not full ROM.",
+    "muscles": [
+      {
+        "muscle": "lats",
+        "role": "primary",
+        "activation_pct": 1.0
+      },
+      {
+        "muscle": "upper_back",
+        "role": "primary",
+        "activation_pct": 1.0
+      },
+      {
+        "muscle": "rear_delt",
+        "role": "secondary",
+        "activation_pct": 0.6
+      },
+      {
+        "muscle": "biceps_long",
+        "role": "secondary",
+        "activation_pct": 0.5
+      }
+    ],
+    "substitutions": [
+      {
+        "exercise": "dumbbell_row",
+        "similarity": 0.9,
+        "reason": "Same pattern with dumbbells"
+      },
+      {
+        "exercise": "cable_row",
+        "similarity": 0.8,
+        "reason": "Same pull pattern"
+      }
+    ]
+  },
+  {
+    "name": "dumbbell_row",
+    "display_name": "Dumbbell Row",
+    "movement_pattern": "horizontal_pull",
+    "equipment": "dumbbell",
+    "is_compound": true,
+    "is_unilateral": true,
+    "supports_1rm": true,
+    "difficulty": "beginner",
+    "instructions": "Support on bench. Pull dumbbell to hip. Lower with control.",
+    "tips": "Keep back flat. Full ROM.",
+    "common_mistakes": "Rotating torso, using momentum.",
+    "muscles": [
+      {
+        "muscle": "lats",
+        "role": "primary",
+        "activation_pct": 1.0
+      },
+      {
+        "muscle": "upper_back",
+        "role": "primary",
+        "activation_pct": 1.0
+      },
+      {
+        "muscle": "rear_delt",
+        "role": "secondary",
+        "activation_pct": 0.6
+      },
+      {
+        "muscle": "biceps_long",
+        "role": "secondary",
+        "activation_pct": 0.5
+      }
+    ],
+    "substitutions": [
+      {
+        "exercise": "barbell_row",
+        "similarity": 0.9,
+        "reason": "Same pattern with barbell"
+      },
+      {
+        "exercise": "cable_row",
+        "similarity": 0.8,
+        "reason": "Same pull pattern"
+      }
+    ]
+  },
+  {
+    "name": "pull_up",
+    "display_name": "Pull Up",
+    "movement_pattern": "vertical_pull",
+    "equipment": "bodyweight",
+    "is_compound": true,
+    "is_unilateral": false,
+    "supports_1rm": false,
+    "difficulty": "intermediate",
+    "instructions": "Hang from bar. Pull chin over bar. Lower with control.",
+    "tips": "Full ROM. Control the negative.",
+    "common_mistakes": "Partial ROM, kipping, not engaging lats.",
+    "muscles": [
+      {
+        "muscle": "lats",
+        "role": "primary",
+        "activation_pct": 1.0
+      },
+      {
+        "muscle": "upper_back",
+        "role": "secondary",
+        "activation_pct": 0.7
+      },
+      {
+        "muscle": "biceps_long",
+        "role": "secondary",
+        "activation_pct": 0.6
+      },
+      {
+        "muscle": "rear_delt",
+        "role": "secondary",
+        "activation_pct": 0.4
+      }
+    ],
+    "substitutions": [
+      {
+        "exercise": "lat_pulldown",
+        "similarity": 0.9,
+        "reason": "Same vertical pull"
+      },
+      {
+        "exercise": "chin_up",
+        "similarity": 0.9,
+        "reason": "Underhand grip variation"
+      }
+    ]
+  },
+  {
+    "name": "chin_up",
+    "display_name": "Chin Up",
+    "movement_pattern": "vertical_pull",
+    "equipment": "bodyweight",
+    "is_compound": true,
+    "is_unilateral": false,
+    "supports_1rm": false,
+    "difficulty": "intermediate",
+    "instructions": "Hang with underhand grip. Pull chin over bar.",
+    "tips": "More bicep involvement than pull-up.",
+    "common_mistakes": "Partial ROM, kipping.",
+    "muscles": [
+      {
+        "muscle": "lats",
+        "role": "primary",
+        "activation_pct": 1.0
+      },
+      {
+        "muscle": "biceps_long",
+        "role": "primary",
+        "activation_pct": 0.8
+      },
+      {
+        "muscle": "upper_back",
+        "role": "secondary",
+        "activation_pct": 0.6
+      }
+    ],
+    "substitutions": [
+      {
+        "exercise": "pull_up",
+        "similarity": 0.9,
+        "reason": "Overhand grip variation"
+      },
+      {
+        "exercise": "lat_pulldown",
+        "similarity": 0.8,
+        "reason": "Same vertical pull"
+      }
+    ]
+  },
+  {
+    "name": "lat_pulldown",
+    "display_name": "Lat Pulldown",
+    "movement_pattern": "vertical_pull",
+    "equipment": "cable",
+    "is_compound": true,
+    "is_unilateral": false,
+    "supports_1rm": false,
+    "difficulty": "beginner",
+    "instructions": "Sit at machine. Pull bar to upper chest.",
+    "tips": "Lean back slightly. Full ROM.",
+    "common_mistakes": "Pulling behind neck, using momentum.",
+    "muscles": [
+      {
+        "muscle": "lats",
+        "role": "primary",
+        "activation_pct": 1.0
+      },
+      {
+        "muscle": "upper_back",
+        "role": "secondary",
+        "activation_pct": 0.6
+      },
+      {
+        "muscle": "biceps_long",
+        "role": "secondary",
+        "activation_pct": 0.5
+      }
+    ],
+    "substitutions": [
+      {
+        "exercise": "pull_up",
+        "similarity": 0.9,
+        "reason": "Same vertical pull"
+      },
+      {
+        "exercise": "chin_up",
+        "similarity": 0.8,
+        "reason": "Bodyweight vertical pull"
+      }
+    ]
+  },
+  {
+    "name": "cable_row",
+    "display_name": "Seated Cable Row",
+    "movement_pattern": "horizontal_pull",
+    "equipment": "cable",
+    "is_compound": true,
+    "is_unilateral": false,
+    "supports_1rm": false,
+    "difficulty": "beginner",
+    "instructions": "Sit at cable machine. Pull handle to torso.",
+    "tips": "Keep back straight. Squeeze shoulder blades.",
+    "common_mistakes": "Rounding back, using momentum.",
+    "muscles": [
+      {
+        "muscle": "lats",
+        "role": "primary",
+        "activation_pct": 1.0
+      },
+      {
+        "muscle": "upper_back",
+        "role": "primary",
+        "activation_pct": 1.0
+      },
+      {
+        "muscle": "rear_delt",
+        "role": "secondary",
+        "activation_pct": 0.5
+      },
+      {
+        "muscle": "biceps_long",
+        "role": "secondary",
+        "activation_pct": 0.5
+      }
+    ],
+    "substitutions": [
+      {
+        "exercise": "barbell_row",
+        "similarity": 0.8,
+        "reason": "Same horizontal pull"
+      },
+      {
+        "exercise": "dumbbell_row",
+        "similarity": 0.8,
+        "reason": "Same pull pattern"
+      }
+    ]
+  },
+  {
+    "name": "t_bar_row",
+    "display_name": "T-Bar Row",
+    "movement_pattern": "horizontal_pull",
+    "equipment": "barbell",
+    "is_compound": true,
+    "is_unilateral": false,
+    "supports_1rm": true,
+    "difficulty": "intermediate",
+    "instructions": "Straddle T-bar. Pull to chest with neutral grip.",
+    "tips": "Keep back flat. Full ROM.",
+    "common_mistakes": "Rounding back, partial ROM.",
+    "muscles": [
+      {
+        "muscle": "lats",
+        "role": "primary",
+        "activation_pct": 1.0
+      },
+      {
+        "muscle": "upper_back",
+        "role": "primary",
+        "activation_pct": 1.0
+      },
+      {
+        "muscle": "rear_delt",
+        "role": "secondary",
+        "activation_pct": 0.6
+      },
+      {
+        "muscle": "biceps_long",
+        "role": "secondary",
+        "activation_pct": 0.5
+      }
+    ],
+    "substitutions": [
+      {
+        "exercise": "barbell_row",
+        "similarity": 0.9,
+        "reason": "Similar row pattern"
+      },
+      {
+        "exercise": "cable_row",
+        "similarity": 0.8,
+        "reason": "Same pull pattern"
+      }
+    ]
+  },
+  {
+    "name": "deadlift",
+    "display_name": "Conventional Deadlift",
+    "movement_pattern": "hip_hinge",
+    "equipment": "barbell",
+    "is_compound": true,
+    "is_unilateral": false,
+    "supports_1rm": true,
+    "difficulty": "advanced",
+    "instructions": "Feet hip-width. Grip bar. Lift by extending hips and knees.",
+    "tips": "Keep bar close. Neutral spine. Drive through heels.",
+    "common_mistakes": "Rounding back, bar drifting away, hitching.",
+    "muscles": [
+      {
+        "muscle": "lower_back",
+        "role": "primary",
+        "activation_pct": 1.0
+      },
+      {
+        "muscle": "glutes",
+        "role": "primary",
+        "activation_pct": 1.0
+      },
+      {
+        "muscle": "hamstrings",
+        "role": "primary",
+        "activation_pct": 0.9
+      },
+      {
+        "muscle": "upper_back",
+        "role": "secondary",
+        "activation_pct": 0.7
+      },
+      {
+        "muscle": "quads",
+        "role": "secondary",
+        "activation_pct": 0.6
+      }
+    ],
+    "substitutions": [
+      {
+        "exercise": "romanian_deadlift",
+        "similarity": 0.8,
+        "reason": "Hip hinge variation"
+      },
+      {
+        "exercise": "trap_bar_deadlift",
+        "similarity": 0.9,
+        "reason": "Similar pattern, different bar"
+      }
+    ]
+  }
+]
