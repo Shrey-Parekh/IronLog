@@ -107,6 +107,8 @@ async def update_workout_session(
     db: AsyncSession, session: WorkoutSession, data: WorkoutSessionUpdate
 ) -> WorkoutSession:
     """Update workout session."""
+    was_unfinished = session.finished_at is None
+    
     if data.finished_at is not None:
         session.finished_at = data.finished_at
         if session.started_at:
@@ -123,6 +125,12 @@ async def update_workout_session(
 
     await db.commit()
     await db.refresh(session)
+    
+    # Trigger post-session analytics if session was just finished
+    if was_unfinished and session.finished_at is not None:
+        from app.tasks.post_session import process_session_analytics
+        process_session_analytics.delay(str(session.id), str(session.user_id))
+    
     return session
 
 
@@ -278,6 +286,10 @@ async def quick_log_workout(
 
     # Update totals
     await update_workout_exercise_totals(db, workout_exercise.id)
+
+    # Trigger post-session analytics (quick-log is always finished)
+    from app.tasks.post_session import process_session_analytics
+    process_session_analytics.delay(str(session.id), str(user_id))
 
     # Reload with relationships
     return await get_workout_session(db, session.id, user_id)

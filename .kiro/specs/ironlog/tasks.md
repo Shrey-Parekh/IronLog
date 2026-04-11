@@ -92,42 +92,47 @@ Reference spec: `ironlog-kiro-spec.md`
 
 ## PHASE 3: ML Models + Background Jobs
 
-- [ ] 3.1 Celery + Redis Setup
+- [x] 3.1 Celery + Redis Setup
   - [x] 3.1.1 Create backend/app/tasks/celery_app.py (Celery config, broker=Redis)
   - [x] 3.1.2 Add Celery worker service to docker-compose
-  - [ ] 3.1.3 Wire finishing a session to enqueue post_session_analytics task
+  - [x] 3.1.3 Wire finishing a session to enqueue post_session_analytics task
 
-- [ ] 3.2 Volume Analyzer
-  - [ ] 3.2.1 Create backend/app/ml/volume_analyzer.py (VolumeAnalyzer class: compute_weekly_volume, detect_imbalances, weekly_volume_trend)
+- [x] 3.2 Volume Analyzer
+  - [x] 3.2.1 Create backend/app/ml/volume_analyzer.py (VolumeAnalyzer class: compute_weekly_volume, detect_imbalances, weekly_volume_trend)
 
-- [ ] 3.3 Strength Curve Model
-  - [ ] 3.3.1 Create backend/app/ml/strength_curve.py (StrengthCurveModel: fit, predict, predict_reps_at_weight, get_strength_timeline — GP with Matern kernel)
+- [x] 3.3 Strength Curve Model
+  - [x] 3.3.1 Create backend/app/ml/strength_curve.py (StrengthCurveModel: fit, predict, predict_reps_at_weight, get_strength_timeline — GP with Matern kernel)
 
-- [ ] 3.4 Plateau Detector
-  - [ ] 3.4.1 Create backend/app/ml/plateau_detector.py (PlateauDetector: detect via PELT changepoint, check_resolved, contextual recommendations)
+- [x] 3.4 Plateau Detector
+  - [x] 3.4.1 Create backend/app/ml/plateau_detector.py (PlateauDetector: detect via PELT changepoint, check_resolved, contextual recommendations)
 
-- [ ] 3.5 Recovery Model
-  - [ ] 3.5.1 Create backend/app/ml/recovery_model.py (BanisterRecoveryModel: compute_training_impulse, compute_recovery_state, personalize, predict_readiness_at)
+- [x] 3.5 Recovery Model
+  - [x] 3.5.1 Create backend/app/ml/recovery_model.py (BanisterRecoveryModel: compute_training_impulse, compute_recovery_state, personalize, predict_readiness_at)
 
-- [ ] 3.6 Autoregulation Engine
-  - [ ] 3.6.1 Create backend/app/ml/autoregulation.py (AutoregulationEngine: compute_readiness, suggest_weight)
+- [x] 3.6 Autoregulation Engine
+  - [x] 3.6.1 Create backend/app/ml/autoregulation.py (AutoregulationEngine: compute_readiness, suggest_weight)
 
-- [ ] 3.7 Split Optimizer
-  - [ ] 3.7.1 Create backend/app/ml/split_optimizer.py (SplitOptimizer: generate_split, suggest_exercise_swap)
+- [x] 3.7 Split Optimizer
+  - [x] 3.7.1 Create backend/app/ml/split_optimizer.py (SplitOptimizer: generate_split, suggest_exercise_swap)
 
-- [ ] 3.8 Post-Session Analytics Pipeline
-  - [ ] 3.8.1 Create backend/app/tasks/post_session.py (9-step Celery task: totals → 1RM → volume → recovery → PRs → plateaus → imbalances → readiness → log)
+- [x] 3.8 Post-Session Analytics Pipeline
+  - [x] 3.8.1 Create backend/app/tasks/post_session.py (9-step Celery task: totals → 1RM → volume → recovery → PRs → plateaus → imbalances → readiness → log)
 
-- [ ] 3.9 Nightly + Weekly Jobs
-  - [ ] 3.9.1 Create backend/app/tasks/nightly.py (retrain models, recompute recovery, inactivity insights)
-  - [ ] 3.9.2 Create backend/app/tasks/weekly.py (weekly summary insight, volume trends, imbalance detection)
-  - [ ] 3.9.3 Configure Celery beat schedule for nightly (2AM UTC) and weekly (Sun 8PM UTC)
+- [x] 3.9 Nightly + Weekly Jobs
+  - [x] 3.9.1 Create backend/app/tasks/nightly.py (retrain models, recompute recovery, inactivity insights)
+  - [x] 3.9.2 Create backend/app/tasks/weekly.py (weekly summary insight, volume trends, imbalance detection)
+  - [x] 3.9.3 Configure Celery beat schedule for nightly (2AM UTC) and weekly (Sun 8PM UTC)
 
-- [ ] 3.10 ML-Enhanced Frontend
-  - [ ] 3.10.1 Update Dashboard: real recovery_state bars, readiness score, insights feed
-  - [ ] 3.10.2 Update Analytics: GP confidence bands on strength chart, MEV/MRV lines on volume chart, Plateaus section
-  - [ ] 3.10.3 Update WorkoutLogger: weight suggestion pre-fill, compound vs isolation rest timer defaults
-  - [ ] 3.10.4 Update ExerciseDetail: strength curve with confidence bands, plateau status
+- [x] 3.10 ML-Enhanced Backend API
+  - [x] 3.10.1 Create backend/app/api/analytics.py (analytics endpoints)
+  - [x] 3.10.2 Create backend/app/schemas/analytics.py (analytics response schemas)
+  - [x] 3.10.3 Wire analytics router to main API
+
+- [ ] 3.11 ML-Enhanced Frontend
+  - [ ] 3.11.1 Update Dashboard: real recovery_state bars, readiness score, insights feed
+  - [ ] 3.11.2 Update Analytics: GP confidence bands on strength chart, MEV/MRV lines on volume chart, Plateaus section
+  - [ ] 3.11.3 Update WorkoutLogger: weight suggestion pre-fill, compound vs isolation rest timer defaults
+  - [ ] 3.11.4 Update ExerciseDetail: strength curve with confidence bands, plateau status
 
 ---
 
