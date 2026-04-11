@@ -138,16 +138,16 @@ Reference spec: `ironlog-kiro-spec.md`
 
 ## PHASE 4: Smart Programming + Recommendations
 
-- [ ] 4.1 Program Generation UI
-  - [ ] 4.1.1 Create backend/app/schemas/program.py + backend/app/api/programs.py (generate split endpoint)
+- [-] 4.1 Program Generation UI
+  - [x] 4.1.1 Create backend/app/schemas/program.py + backend/app/api/programs.py (generate split endpoint)
   - [ ] 4.1.2 Create src/pages/Programs.tsx (Generate Split form, day-by-day display, Accept/Regenerate)
 
-- [ ] 4.2 Recommendation Endpoints
-  - [ ] 4.2.1 Create backend/app/services/recommendation_service.py
-  - [ ] 4.2.2 Create backend/app/api/recommendations.py (GET /recommend/weight/{id}, /recommend/exercises, /recommend/deload, /recommend/next-session)
+- [x] 4.2 Recommendation Endpoints
+  - [x] 4.2.1 Create backend/app/services/recommendation_service.py
+  - [x] 4.2.2 Create backend/app/api/recommendations.py (GET /recommend/weight/{id}, /recommend/exercises, /recommend/deload, /recommend/next-session)
 
-- [ ] 4.3 Deload Detection
-  - [ ] 4.3.1 Implement deload detection logic in recommendation_service.py (4+ weeks volume increase + declining readiness → suggest deload)
+- [x] 4.3 Deload Detection
+  - [x] 4.3.1 Implement deload detection logic in recommendation_service.py (4+ weeks volume increase + declining readiness → suggest deload)
 
 ---
 
