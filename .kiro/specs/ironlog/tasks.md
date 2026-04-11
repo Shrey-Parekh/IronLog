@@ -128,7 +128,7 @@ Reference spec: `ironlog-kiro-spec.md`
   - [x] 3.10.2 Create backend/app/schemas/analytics.py (analytics response schemas)
   - [x] 3.10.3 Wire analytics router to main API
 
-- [ ] 3.11 ML-Enhanced Frontend
+- [ ] 3.11 ML-Enhanced Frontend (Frontend integration with ML backend)
   - [ ] 3.11.1 Update Dashboard: real recovery_state bars, readiness score, insights feed
   - [ ] 3.11.2 Update Analytics: GP confidence bands on strength chart, MEV/MRV lines on volume chart, Plateaus section
   - [ ] 3.11.3 Update WorkoutLogger: weight suggestion pre-fill, compound vs isolation rest timer defaults

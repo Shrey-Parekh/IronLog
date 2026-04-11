@@ -198,25 +198,28 @@ IronLog follows a **"dark athletic minimalism"** design aesthetic:
 ### Phase 1: Backend Foundation ✅
 - [x] Project scaffolding
 - [x] Database models and migrations
-- [x] Exercise knowledge base
+- [x] Exercise knowledge base (120+ exercises)
 - [x] Authentication system
 - [x] Workout logging API
 
-### Phase 2: Frontend PWA (In Progress)
+### Phase 2: Frontend PWA ✅
 - [x] Frontend scaffolding with design system
 - [x] Dashboard with stats
 - [x] Navigation and routing
-- [ ] Workout logger screen
-- [ ] Exercise browser
-- [ ] Analytics dashboard
+- [x] Workout logger screen
+- [x] Exercise browser
+- [x] Analytics dashboard
 
-### Phase 3: ML Models (Planned)
-- [ ] Celery + Redis setup
-- [ ] Volume analyzer
-- [ ] Strength curve modeling (Gaussian Process)
-- [ ] Plateau detector (PELT)
-- [ ] Recovery model (Banister)
-- [ ] Autoregulation engine
+### Phase 3: ML Models ✅
+- [x] Volume analyzer
+- [x] Strength curve modeling (Gaussian Process)
+- [x] Plateau detector (PELT)
+- [x] Recovery model (Banister)
+- [x] Autoregulation engine
+- [x] Split optimizer
+- [x] Post-session analytics pipeline
+- [x] Nightly & weekly background jobs
+- [x] Analytics API endpoints
 
 ### Phase 4: Smart Programming (Planned)
 - [ ] Program generation UI

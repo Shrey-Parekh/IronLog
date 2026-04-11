@@ -4,8 +4,8 @@ from app.config import settings
 
 celery_app = Celery(
     "ironlog",
-    broker=settings.CELERY_BROKER_URL,
-    backend=settings.CELERY_RESULT_BACKEND,
+    broker=settings.celery_broker_url,
+    backend=settings.celery_result_backend,
     include=[
         "app.tasks.post_session",
         "app.tasks.nightly",
