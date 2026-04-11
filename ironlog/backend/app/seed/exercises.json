@@ -12,10 +12,10 @@
     "tips": "Retract and depress your shoulder blades before unracking. Maintain a slight arch in your lower back. Keep your wrists stacked over your elbows.",
     "common_mistakes": "Bouncing the bar off the chest. Flaring elbows to 90 degrees. Lifting hips off the bench. Uneven lockout.",
     "muscles": [
-      {"muscle": "chest", "role": "primary", "activation_pct": 1.0},
-      {"muscle": "front_delt", "role": "secondary", "activation_pct": 0.6},
-      {"muscle": "long_head_tricep", "role": "secondary", "activation_pct": 0.4},
-      {"muscle": "lateral_head_tricep", "role": "secondary", "activation_pct": 0.35}
+      {"muscle": "chest", "role": "primary", "activation_pct": 75},
+      {"muscle": "front_delt", "role": "secondary", "activation_pct": 18},
+      {"muscle": "long_head_tricep", "role": "secondary", "activation_pct": 12},
+      {"muscle": "lateral_head_tricep", "role": "secondary", "activation_pct": 10}
     ],
     "substitutions": [
       {"exercise": "dumbbell_bench_press", "similarity": 0.9, "reason": "Same movement pattern, greater ROM with independent arms"},
@@ -35,9 +35,9 @@
     "tips": "Allows greater ROM than barbell. Keep wrists neutral. Each arm works independently, correcting imbalances.",
     "common_mistakes": "Flaring elbows too wide. Uneven pressing. Not controlling the descent.",
     "muscles": [
-      {"muscle": "chest", "role": "primary", "activation_pct": 1.0},
-      {"muscle": "front_delt", "role": "secondary", "activation_pct": 0.6},
-      {"muscle": "long_head_tricep", "role": "secondary", "activation_pct": 0.4}
+      {"muscle": "chest", "role": "primary", "activation_pct": 72},
+      {"muscle": "front_delt", "role": "secondary", "activation_pct": 20},
+      {"muscle": "long_head_tricep", "role": "secondary", "activation_pct": 15}
     ],
     "substitutions": [
       {"exercise": "barbell_bench_press", "similarity": 0.9, "reason": "Same pattern, barbell allows heavier loads"},
