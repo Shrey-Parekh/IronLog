@@ -50,7 +50,7 @@ export default function ExercisePicker({ onSelect, onClose }: ExercisePickerProp
 
   const fetchMuscleGroups = async () => {
     try {
-      const response = await api.get('/exercises/muscle-groups')
+      const response = await api.get('/muscle-groups')
       setMuscleGroups(response.data.data || [])
     } catch (error) {
       console.error('Failed to fetch muscle groups:', error)
@@ -80,7 +80,7 @@ export default function ExercisePicker({ onSelect, onClose }: ExercisePickerProp
     if (!selectedMuscleGroup) return
     setLoading(true)
     try {
-      const response = await api.get(`/exercises/muscle-groups/${selectedMuscleGroup}/exercises`)
+      const response = await api.get(`/muscle-groups/${selectedMuscleGroup}/exercises`)
       setExercises(response.data.data || [])
     } catch (error) {
       console.error('Failed to fetch exercises:', error)
