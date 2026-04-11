@@ -67,18 +67,18 @@ Reference spec: `ironlog-kiro-spec.md`
 - [-] 2.2 Workout Logger Screen
   - [x] 2.2.1 Create src/stores/workoutStore.ts (Zustand — active session state)
   - [x] 2.2.2 Create src/hooks/useWorkoutSession.ts
-  - [ ] 2.2.3 Create src/components/WeightInput.tsx (numeric display + ±2.5/±5 buttons + numpad modal)
-  - [ ] 2.2.4 Create src/components/SetLoggerRow.tsx (weight + reps + RPE + checkmark)
-  - [ ] 2.2.5 Create src/components/RestTimer.tsx (countdown toast, auto-start on set log)
-  - [ ] 2.2.6 Create src/pages/ExercisePicker.tsx (search + filter + recent)
-  - [ ] 2.2.7 Create src/pages/WorkoutLogger.tsx (full logger screen with session header, exercise cards, finish flow)
+  - [x] 2.2.3 Create src/components/WeightInput.tsx (numeric display + ±2.5/±5 buttons + numpad modal)
+  - [x] 2.2.4 Create src/components/SetLoggerRow.tsx (weight + reps + RPE + checkmark)
+  - [x] 2.2.5 Create src/components/RestTimer.tsx (countdown toast, auto-start on set log)
+  - [x] 2.2.6 Create src/pages/ExercisePicker.tsx (search + filter + recent)
+  - [x] 2.2.7 Create src/pages/WorkoutLogger.tsx (full logger screen with session header, exercise cards, finish flow)
 
 - [ ] 2.3 Dashboard Screen
   - [x] 2.3.1 Create src/pages/Dashboard.tsx (greeting, readiness placeholder, weekly summary, recovery list, insights preview, Start Workout CTA)
 
 - [ ] 2.4 Exercise Browser + Detail
-  - [ ] 2.4.1 Create src/components/ExerciseCard.tsx
-  - [ ] 2.4.2 Create src/pages/Exercises.tsx (search + filter chips + exercise list)
+  - [x] 2.4.1 Create src/components/ExerciseCard.tsx
+  - [x] 2.4.2 Create src/pages/Exercises.tsx (search + filter chips + exercise list)
   - [ ] 2.4.3 Create src/pages/ExerciseDetail.tsx (full detail: muscles, instructions, personal stats, substitutions, history)
 
 - [ ] 2.5 Analytics Dashboard (basic)

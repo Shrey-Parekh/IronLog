@@ -1,12 +1,22 @@
 import NavigationBar from '@/components/NavigationBar'
+import EmptyState from '@/components/EmptyState'
+import { Calendar } from '@phosphor-icons/react'
 
 export default function Programs() {
   return (
-    <div className="min-h-screen bg-background pb-20">
-      <div className="max-w-lg mx-auto p-4">
-        <h1 className="text-2xl font-bold mb-4">Programs</h1>
-        <p className="text-muted-foreground">Coming soon...</p>
-      </div>
+    <div className="page">
+      <h1 className="page-title">Programs</h1>
+      
+      <EmptyState
+        icon={Calendar}
+        title="No programs yet"
+        description="Create a custom training program based on your goals and schedule."
+        action={{
+          label: 'Generate program',
+          onClick: () => console.log('Generate program')
+        }}
+      />
+      
       <NavigationBar />
     </div>
   )

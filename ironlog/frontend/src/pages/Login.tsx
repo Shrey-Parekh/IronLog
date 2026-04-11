@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Button } from '@/components/ui/button'
 import { useAuthStore } from '@/stores/authStore'
 import api from '@/services/api'
 
@@ -51,18 +50,26 @@ export default function Login() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background p-4">
+    <div 
+      className="min-h-screen flex items-center justify-center p-4"
+      style={{ background: 'var(--bg-base)' }}
+    >
       <div className="w-full max-w-md space-y-8">
         <div className="text-center">
-          <h1 className="text-4xl font-bold">IronLog</h1>
-          <p className="text-muted-foreground mt-2">
+          <h1 
+            className="type-display"
+            style={{ fontSize: '42px', marginBottom: '8px' }}
+          >
+            IronLog
+          </h1>
+          <p className="type-body-sm">
             AI-powered training intelligence
           </p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label htmlFor="email" className="block text-sm font-medium mb-2">
+            <label htmlFor="email" className="type-h3 block mb-2">
               Email
             </label>
             <input
@@ -71,13 +78,13 @@ export default function Login() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="w-full px-3 py-2 border border-input rounded-md bg-background"
+              className="input"
             />
           </div>
 
           {!isLogin && (
             <div>
-              <label htmlFor="displayName" className="block text-sm font-medium mb-2">
+              <label htmlFor="displayName" className="type-h3 block mb-2">
                 Display Name (optional)
               </label>
               <input
@@ -85,13 +92,13 @@ export default function Login() {
                 type="text"
                 value={displayName}
                 onChange={(e) => setDisplayName(e.target.value)}
-                className="w-full px-3 py-2 border border-input rounded-md bg-background"
+                className="input"
               />
             </div>
           )}
 
           <div>
-            <label htmlFor="password" className="block text-sm font-medium mb-2">
+            <label htmlFor="password" className="type-h3 block mb-2">
               Password
             </label>
             <input
@@ -100,22 +107,37 @@ export default function Login() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              className="w-full px-3 py-2 border border-input rounded-md bg-background"
+              className="input"
             />
           </div>
 
           {error && (
-            <div className="text-destructive text-sm">{error}</div>
+            <div 
+              className="type-body-sm"
+              style={{ 
+                color: 'var(--danger-text)',
+                background: 'var(--danger-bg)',
+                border: '1px solid var(--danger-border)',
+                borderRadius: 'var(--radius-md)',
+                padding: 'var(--space-3)',
+              }}
+            >
+              {error}
+            </div>
           )}
 
-          <Button type="submit" className="w-full" disabled={loading}>
+          <button 
+            type="submit" 
+            className="btn-primary w-full" 
+            disabled={loading}
+          >
             {loading ? 'Loading...' : isLogin ? 'Login' : 'Register'}
-          </Button>
+          </button>
 
           <button
             type="button"
             onClick={() => setIsLogin(!isLogin)}
-            className="w-full text-sm text-muted-foreground hover:text-foreground"
+            className="btn-ghost w-full"
           >
             {isLogin
               ? "Don't have an account? Register"
