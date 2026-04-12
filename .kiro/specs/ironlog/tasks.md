@@ -153,26 +153,26 @@ Reference spec: `ironlog-kiro-spec.md`
 
 ## PHASE 5: Polish
 
-- [ ] 5.1 Offline Support
-  - [ ] 5.1.1 Create src/services/offlineQueue.ts (IndexedDB queue for sets)
-  - [ ] 5.1.2 Create src/hooks/useOfflineSync.ts (sync on reconnect)
-  - [ ] 5.1.3 Update sw.js (cache exercise knowledge base, static assets)
-  - [ ] 5.1.4 Add offline indicator UI
+- [x] 5.1 Offline Support
+  - [x] 5.1.1 Create src/services/offlineQueue.ts (IndexedDB queue for sets)
+  - [x] 5.1.2 Create src/hooks/useOfflineSync.ts (sync on reconnect)
+  - [x] 5.1.3 Update sw.js (cache exercise knowledge base, static assets)
+  - [x] 5.1.4 Add offline indicator UI
 
-- [ ] 5.2 PWA Polish
-  - [ ] 5.2.1 Add beforeinstallprompt install banner
-  - [ ] 5.2.2 Splash screen + status bar theme + iOS standalone meta tags
+- [x] 5.2 PWA Polish
+  - [x] 5.2.1 Add beforeinstallprompt install banner
+  - [x] 5.2.2 Splash screen + status bar theme + iOS standalone meta tags
 
-- [ ] 5.3 Data Export
-  - [ ] 5.3.1 Create backend/app/api/export endpoints (GET /export/csv, /export/json)
+- [x] 5.3 Data Export
+  - [x] 5.3.1 Create backend/app/api/export endpoints (GET /export/csv, /export/json)
 
-- [ ] 5.4 Error Handling + Empty States
-  - [ ] 5.4.1 Add loading skeletons to all pages
-  - [ ] 5.4.2 Add empty states with CTAs to all pages
-  - [ ] 5.4.3 Add global toast notification system for API errors
-  - [ ] 5.4.4 Add form validation with inline error messages
+- [x] 5.4 Error Handling + Empty States
+  - [x] 5.4.1 Add loading skeletons to all pages
+  - [x] 5.4.2 Add empty states with CTAs to all pages
+  - [x] 5.4.3 Add global toast notification system for API errors
+  - [x] 5.4.4 Add form validation with inline error messages
 
-- [ ] 5.5 Docker Compose Production Config
-  - [ ] 5.5.1 Create multi-stage Dockerfile for backend
-  - [ ] 5.5.2 Create Nginx config + frontend Dockerfile
-  - [ ] 5.5.3 Create docker-compose.yml (production) with health checks
+- [x] 5.5 Docker Compose Production Config
+  - [x] 5.5.1 Create multi-stage Dockerfile for backend
+  - [x] 5.5.2 Create Nginx config + frontend Dockerfile
+  - [x] 5.5.3 Create docker-compose.yml (production) with health checks

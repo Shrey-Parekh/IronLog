@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import NavigationBar from '@/components/NavigationBar'
 import EmptyState from '@/components/EmptyState'
@@ -6,7 +6,7 @@ import SetLoggerRow from '@/components/SetLoggerRow'
 import ExercisePicker from './ExercisePicker'
 import { useWorkoutStore } from '@/stores/workoutStore'
 import { useWorkoutSession } from '@/hooks/useWorkoutSession'
-import { Barbell, Plus, X, DotsThreeVertical, Check, Timer as TimerIcon } from '@phosphor-icons/react'
+import { Barbell, Plus, DotsThreeVertical, Check, Timer as TimerIcon } from '@phosphor-icons/react'
 import { motion, AnimatePresence } from 'motion/react'
 
 export default function WorkoutLogger() {
@@ -51,17 +51,6 @@ export default function WorkoutLogger() {
     }
   }
 
-  const formatElapsedTime = (seconds: number) => {
-    const hours = Math.floor(seconds / 3600)
-    const mins = Math.floor((seconds % 3600) / 60)
-    const secs = seconds % 60
-    
-    if (hours > 0) {
-      return `${hours}h ${mins}m`
-    }
-    return `${mins}m ${secs}s`
-  }
-
   if (!isLogging || !activeSession) {
     return (
       <div className="page">
@@ -84,20 +73,20 @@ export default function WorkoutLogger() {
 
   return (
     <>
-      <div className="page">
+      <div className="workout-session-container">
         <div className="workout-header">
-          <div>
-            <h1 className="type-h1">{activeSession.session_name || 'Workout Session'}</h1>
+          <div className="workout-header-content">
+            <h1 className="workout-title">{activeSession.session_name || 'Workout Session'}</h1>
             <div className="workout-meta">
-              <span className="workout-time">
+              <span className="workout-meta-item">
                 <TimerIcon size={16} weight="light" />
-                {formatElapsedTime(elapsedTime)}
+                {elapsedTime}
               </span>
-              <span>{activeSession.exercises.reduce((sum, ex) => sum + ex.sets.filter(s => s.logged).length, 0)} sets</span>
+              <span className="workout-meta-item">{activeSession.exercises.reduce((sum, ex) => sum + ex.sets.filter(s => s.logged).length, 0)} sets</span>
             </div>
           </div>
           <button
-            className="btn-primary"
+            className="workout-finish-btn"
             onClick={() => setShowFinishModal(true)}
             disabled={activeSession.exercises.length === 0}
           >
@@ -106,7 +95,7 @@ export default function WorkoutLogger() {
           </button>
         </div>
 
-        <div className="exercise-list">
+        <div className="space-y-5">
           {activeSession.exercises.map((exercise) => (
             <ExerciseCard
               key={exercise.exercise_order}
@@ -119,7 +108,7 @@ export default function WorkoutLogger() {
             />
           ))}
 
-          <button className="btn-add-dashed" onClick={() => setShowExercisePicker(true)}>
+          <button className="add-exercise-btn" onClick={() => setShowExercisePicker(true)}>
             <Plus size={20} weight="bold" />
             Add Exercise
           </button>
@@ -150,7 +139,7 @@ export default function WorkoutLogger() {
               <div className="card-raised">
                 <h2 className="type-h2">Finish Workout?</h2>
                 <p className="type-body-sm" style={{ margin: 'var(--space-3) 0 var(--space-5)', color: 'var(--text-secondary)' }}>
-                  {activeSession.exercises.reduce((sum, ex) => sum + ex.sets.filter(s => s.logged).length, 0)} sets · {activeSession.exercises.length} exercises · {formatElapsedTime(elapsedTime)}
+                  {activeSession.exercises.reduce((sum, ex) => sum + ex.sets.filter(s => s.logged).length, 0)} sets · {activeSession.exercises.length} exercises · {elapsedTime}
                 </p>
                 <div className="modal-actions">
                   <button className="btn-secondary" onClick={() => setShowFinishModal(false)}>
@@ -185,13 +174,13 @@ function ExerciseCard({ exercise, onRemove, onAddSet, onUpdateSet, onLogSet, onU
   const [showNotes, setShowNotes] = useState(false)
 
   return (
-    <div className="card">
-      <div className="exercise-header">
-        <div>
-          <h3 className="type-h2">{exercise.exercise_name}</h3>
-          <p className="type-caption">{exercise.sets.filter((s: any) => s.logged).length} / {exercise.sets.length} completed</p>
+    <div className="exercise-card">
+      <div className="exercise-card-header">
+        <div className="exercise-card-title-section">
+          <h3 className="exercise-card-title">{exercise.exercise_name}</h3>
+          <p className="exercise-card-subtitle">{exercise.sets.filter((s: any) => s.logged).length} / {exercise.sets.length} completed</p>
         </div>
-        <button className="btn-icon" onClick={() => setShowMenu(!showMenu)}>
+        <button className="exercise-menu-btn" onClick={() => setShowMenu(!showMenu)}>
           <DotsThreeVertical size={20} weight="bold" />
         </button>
         
@@ -220,11 +209,11 @@ function ExerciseCard({ exercise, onRemove, onAddSet, onUpdateSet, onLogSet, onU
       )}
 
       <div className="set-headers">
-        <span>SET</span>
-        <span>WEIGHT</span>
-        <span>REPS</span>
-        <span>RPE</span>
-        <span></span>
+        <span className="set-header-item">SET</span>
+        <span className="set-header-item">WEIGHT</span>
+        <span className="set-header-item">REPS</span>
+        <span className="set-header-item">RPE</span>
+        <span className="set-header-item"></span>
       </div>
 
       <div className="sets-list">
@@ -245,7 +234,7 @@ function ExerciseCard({ exercise, onRemove, onAddSet, onUpdateSet, onLogSet, onU
         ))}
       </div>
 
-      <button className="btn-ghost add-set-btn" onClick={onAddSet}>
+      <button className="add-set-btn" onClick={onAddSet}>
         <Plus size={18} weight="bold" />
         Add Set
       </button>

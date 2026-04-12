@@ -1,0 +1,128 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: ironlog-postgres-prod
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-ironlog}
+      POSTGRES_USER: ${POSTGRES_USER:-ironlog}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - ironlog-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-ironlog}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: ironlog-redis-prod
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    networks:
+      - ironlog-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.prod
+    container_name: ironlog-backend-prod
+    environment:
+      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:-ironlog}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-ironlog}
+      REDIS_URL: redis://redis:6379/0
+      SECRET_KEY: ${SECRET_KEY}
+      ENVIRONMENT: production
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost}
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - ironlog-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import requests; requests.get('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  celery-worker:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.prod
+    container_name: ironlog-celery-worker-prod
+    command: celery -A app.tasks.celery_app worker --loglevel=info --concurrency=2
+    environment:
+      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:-ironlog}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-ironlog}
+      REDIS_URL: redis://redis:6379/0
+      SECRET_KEY: ${SECRET_KEY}
+      ENVIRONMENT: production
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - ironlog-network
+    restart: unless-stopped
+
+  celery-beat:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.prod
+    container_name: ironlog-celery-beat-prod
+    command: celery -A app.tasks.celery_app beat --loglevel=info
+    environment:
+      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:-ironlog}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-ironlog}
+      REDIS_URL: redis://redis:6379/0
+      SECRET_KEY: ${SECRET_KEY}
+      ENVIRONMENT: production
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - ironlog-network
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.prod
+    container_name: ironlog-frontend-prod
+    ports:
+      - "${PORT:-80}:80"
+    depends_on:
+      - backend
+    networks:
+      - ironlog-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:80/health"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+
+networks:
+  ironlog-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  redis_data:
