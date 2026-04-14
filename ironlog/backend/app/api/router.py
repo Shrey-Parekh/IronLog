@@ -11,7 +11,7 @@ from app.api.export import router as export_router
 
 api_router = APIRouter()
 
-api_router.include_router(auth_router, prefix="/auth", tags=["auth"])
+api_router.include_router(auth_router, tags=["auth"])
 api_router.include_router(exercises_router, tags=["exercises"])
 api_router.include_router(workouts_router, prefix="/workouts", tags=["workouts"])
 api_router.include_router(analytics_router, prefix="/analytics", tags=["analytics"])

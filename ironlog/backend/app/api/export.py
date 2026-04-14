@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends
 from fastapi.responses import StreamingResponse
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
@@ -7,8 +7,7 @@ import json
 import io
 from datetime import datetime
 
-from app.database import get_db
-from app.dependencies import get_current_user
+from app.dependencies import get_current_user, get_db
 from app.models.user import User
 from app.models.workout import WorkoutSession, WorkoutExercise, Set
 from app.models.exercise import Exercise

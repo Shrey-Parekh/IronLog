@@ -48,7 +48,7 @@ export default function SetLoggerRow({
     >
       <div
         className={`
-          grid grid-cols-[40px_1fr_1fr_80px_48px] gap-3 items-center p-4 rounded-xl
+          grid items-center rounded-xl
           transition-all duration-200
           ${isLogged 
             ? 'bg-bg-surface border-2 border-border-subtle opacity-70' 
@@ -56,16 +56,21 @@ export default function SetLoggerRow({
           }
           ${isPR ? 'ring-2 ring-clay-400 ring-offset-2' : ''}
         `}
+        style={{
+          gridTemplateColumns: 'minmax(32px, 40px) minmax(80px, 1fr) minmax(100px, 1fr) minmax(70px, 80px) minmax(44px, 48px)',
+          gap: 'clamp(8px, 2vw, 12px)',
+          padding: 'clamp(12px, 3vw, 16px)',
+        }}
       >
         {/* Set Number */}
         <div className="flex items-center justify-center">
-          <span className="type-h3 text-text-secondary font-semibold">
+          <span className="type-h3 text-text-secondary font-semibold" style={{ fontSize: 'clamp(14px, 3.5vw, 16px)' }}>
             {setNumber}
           </span>
         </div>
 
         {/* Weight */}
-        <div>
+        <div style={{ minWidth: 0 }}>
           {isLogged ? (
             <div className="flex items-baseline gap-1">
               <span className="type-stat-sm tabular-nums text-text-primary">
@@ -79,7 +84,7 @@ export default function SetLoggerRow({
         </div>
 
         {/* Reps */}
-        <div>
+        <div style={{ minWidth: 0 }}>
           {isLogged ? (
             <div className="flex items-baseline gap-1">
               <span className="type-stat-sm tabular-nums text-text-primary">
@@ -88,26 +93,36 @@ export default function SetLoggerRow({
               <span className="type-caption text-text-tertiary">reps</span>
             </div>
           ) : (
-            <div className="flex items-center gap-2">
+            <div className="flex items-center" style={{ gap: 'clamp(4px, 1vw, 8px)' }}>
               <motion.button
                 type="button"
                 onClick={() => handleRepsAdjust(-1)}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className="w-8 h-8 rounded-lg bg-bg-surface border-2 border-border-default flex items-center justify-center text-text-secondary hover:border-sage-300 hover:text-sage-600 transition-colors"
+                className="rounded-lg bg-bg-surface border-2 border-border-default flex items-center justify-center text-text-secondary hover:border-sage-300 hover:text-sage-600 transition-colors"
+                style={{
+                  width: 'clamp(28px, 7vw, 32px)',
+                  height: 'clamp(28px, 7vw, 32px)',
+                  flexShrink: 0,
+                }}
               >
-                <Minus size={16} weight="bold" />
+                <Minus size={14} weight="bold" />
               </motion.button>
               
               <input
                 type="number"
+                inputMode="numeric"
                 value={reps}
                 onChange={(e) => onRepsChange(Math.max(1, parseInt(e.target.value) || 1))}
                 onFocus={() => setIsFocused('reps')}
                 onBlur={() => setIsFocused(null)}
-                className="w-16 h-10 text-center bg-bg-raised border-2 border-border-default rounded-lg font-mono text-lg font-medium text-text-primary focus:border-sage-400 focus:ring-2 focus:ring-sage-200 transition-all outline-none"
+                className="text-center bg-bg-raised border-2 border-border-default rounded-lg font-mono font-medium text-text-primary focus:border-sage-400 focus:ring-2 focus:ring-sage-200 transition-all outline-none"
                 style={{
                   appearance: 'textfield',
+                  width: 'clamp(48px, 12vw, 64px)',
+                  height: 'clamp(36px, 9vw, 40px)',
+                  fontSize: 'clamp(16px, 4vw, 18px)',
+                  minWidth: 0,
                 }}
               />
               
@@ -116,18 +131,23 @@ export default function SetLoggerRow({
                 onClick={() => handleRepsAdjust(1)}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className="w-8 h-8 rounded-lg bg-bg-surface border-2 border-border-default flex items-center justify-center text-text-secondary hover:border-sage-300 hover:text-sage-600 transition-colors"
+                className="rounded-lg bg-bg-surface border-2 border-border-default flex items-center justify-center text-text-secondary hover:border-sage-300 hover:text-sage-600 transition-colors"
+                style={{
+                  width: 'clamp(28px, 7vw, 32px)',
+                  height: 'clamp(28px, 7vw, 32px)',
+                  flexShrink: 0,
+                }}
               >
-                <Plus size={16} weight="bold" />
+                <Plus size={14} weight="bold" />
               </motion.button>
             </div>
           )}
         </div>
 
         {/* RPE */}
-        <div className="relative">
+        <div className="relative" style={{ minWidth: 0 }}>
           {isLogged ? (
-            <span className="type-body-sm text-text-secondary">
+            <span className="type-body-sm text-text-secondary" style={{ fontSize: 'clamp(12px, 3vw, 13px)' }}>
               {rpe ? `RPE ${rpe}` : '—'}
             </span>
           ) : (
@@ -138,12 +158,17 @@ export default function SetLoggerRow({
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className={`
-                  w-full h-10 rounded-lg border-2 font-medium text-sm transition-all
+                  w-full rounded-lg border-2 font-medium transition-all
                   ${rpe 
                     ? 'bg-powder-50 border-powder-300 text-powder-700' 
                     : 'bg-bg-surface border-border-default text-text-tertiary hover:border-border-strong'
                   }
                 `}
+                style={{
+                  height: 'clamp(36px, 9vw, 40px)',
+                  fontSize: 'clamp(11px, 2.8vw, 13px)',
+                  minWidth: 0,
+                }}
               >
                 {rpe ? `RPE ${rpe}` : 'RPE'}
               </motion.button>
@@ -210,25 +235,33 @@ export default function SetLoggerRow({
         </div>
 
         {/* Log Button */}
-        <div>
+        <div style={{ minWidth: 0 }}>
           {!isLogged ? (
             <motion.button
               type="button"
               onClick={onLog}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="w-12 h-12 rounded-xl bg-sage-500 text-white flex items-center justify-center shadow-sm hover:bg-sage-600 hover:shadow-md transition-all"
+              className="rounded-xl bg-sage-500 text-white flex items-center justify-center shadow-sm hover:bg-sage-600 hover:shadow-md transition-all"
+              style={{
+                width: 'clamp(44px, 11vw, 48px)',
+                height: 'clamp(44px, 11vw, 48px)',
+              }}
             >
-              <Check size={24} weight="bold" />
+              <Check size={20} weight="bold" />
             </motion.button>
           ) : (
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ type: 'spring', damping: 15, stiffness: 300 }}
-              className="w-12 h-12 rounded-xl bg-sage-50 border-2 border-sage-300 flex items-center justify-center"
+              className="rounded-xl bg-sage-50 border-2 border-sage-300 flex items-center justify-center"
+              style={{
+                width: 'clamp(44px, 11vw, 48px)',
+                height: 'clamp(44px, 11vw, 48px)',
+              }}
             >
-              <Check size={24} weight="bold" className="text-sage-600" />
+              <Check size={20} weight="bold" className="text-sage-600" />
             </motion.div>
           )}
         </div>

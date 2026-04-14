@@ -5,10 +5,12 @@ import Exercises from '@/pages/Exercises'
 import ExerciseDetail from '@/pages/ExerciseDetail'
 import Analytics from '@/pages/Analytics'
 import Programs from '@/pages/Programs'
+import Login from '@/pages/Login'
 
 export function AppRoutes() {
   return (
     <Routes>
+      <Route path="/login" element={<Login />} />
       <Route path="/" element={<Dashboard />} />
       <Route path="/workout" element={<WorkoutLogger />} />
       <Route path="/exercises" element={<Exercises />} />

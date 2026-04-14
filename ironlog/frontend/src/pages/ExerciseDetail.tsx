@@ -2,13 +2,11 @@ import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import NavigationBar from '@/components/NavigationBar'
 import EmptyState from '@/components/EmptyState'
-import ExerciseCard from '@/components/ExerciseCard'
 import api from '@/services/api'
 import { ExerciseDetail as ExerciseDetailType } from '@/types'
 import { 
   ArrowLeft, 
   Info, 
-  Barbell, 
   Lightning, 
   Target,
   ListChecks,
@@ -152,9 +150,6 @@ export default function ExerciseDetail() {
       {/* Instructions */}
       {exercise.instructions && (
         <div className="section">
-          <div className="section-header">
-            <h2 className="type-h2">How to Perform</h2>
-          </div>
           <div className="card">
             <div style={{ display: 'flex', gap: 'var(--space-2)', marginBottom: 'var(--space-3)' }}>
               <ListChecks size={20} weight="light" color="var(--sage-500)" />
@@ -177,9 +172,6 @@ export default function ExerciseDetail() {
       {/* Tips */}
       {exercise.tips && (
         <div className="section">
-          <div className="section-header">
-            <h2 className="type-h2">Pro Tips</h2>
-          </div>
           <div className="card" style={{ background: 'var(--sage-50)', borderColor: 'var(--sage-200)' }}>
             <div style={{ display: 'flex', gap: 'var(--space-2)', marginBottom: 'var(--space-3)' }}>
               <Lightning size={20} weight="fill" color="var(--sage-600)" />
@@ -202,9 +194,6 @@ export default function ExerciseDetail() {
       {/* Common Mistakes */}
       {exercise.common_mistakes && (
         <div className="section">
-          <div className="section-header">
-            <h2 className="type-h2">Common Mistakes</h2>
-          </div>
           <div className="card" style={{ background: 'var(--warning-bg)', borderColor: 'var(--warning-border)' }}>
             <div style={{ display: 'flex', gap: 'var(--space-2)', marginBottom: 'var(--space-3)' }}>
               <WarningCircle size={20} weight="fill" color="var(--warning-icon)" />

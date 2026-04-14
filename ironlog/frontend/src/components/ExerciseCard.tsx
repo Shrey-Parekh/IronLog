@@ -34,6 +34,19 @@ export default function ExerciseCard({ exercise, onClick, showStats, stats }: Ex
     }
   }
 
+  const getDifficultyLabel = (difficulty: string) => {
+    switch (difficulty) {
+      case 'beginner':
+        return 'Beginner'
+      case 'intermediate':
+        return 'Intermediate'
+      case 'advanced':
+        return 'Advanced'
+      default:
+        return ''
+    }
+  }
+
   const formatMovementPattern = (pattern: string) => {
     return pattern
       .split('_')
@@ -68,6 +81,7 @@ export default function ExerciseCard({ exercise, onClick, showStats, stats }: Ex
                 background: 'var(--bg-inset)',
                 padding: '3px 8px',
                 borderRadius: 'var(--radius-xs)',
+                border: '1px solid var(--border-subtle)',
               }}
             >
               {exercise.equipment}
@@ -78,6 +92,7 @@ export default function ExerciseCard({ exercise, onClick, showStats, stats }: Ex
                 background: 'var(--bg-inset)',
                 padding: '3px 8px',
                 borderRadius: 'var(--radius-xs)',
+                border: '1px solid var(--border-subtle)',
               }}
             >
               {formatMovementPattern(exercise.movement_pattern)}
@@ -90,6 +105,7 @@ export default function ExerciseCard({ exercise, onClick, showStats, stats }: Ex
                   color: 'var(--sage-700)',
                   padding: '3px 8px',
                   borderRadius: 'var(--radius-xs)',
+                  border: '1px solid var(--sage-200)',
                 }}
               >
                 Compound
@@ -122,18 +138,33 @@ export default function ExerciseCard({ exercise, onClick, showStats, stats }: Ex
           )}
         </div>
 
-        {/* Right Side */}
+        {/* Right Side - Difficulty Indicator */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 'var(--space-2)' }}>
-          {/* Difficulty Indicator */}
+          {/* Difficulty Badge */}
           <div
             style={{
-              width: '10px',
-              height: '10px',
-              borderRadius: '50%',
-              background: getDifficultyColor(exercise.difficulty),
-              flexShrink: 0,
+              display: 'flex',
+              alignItems: 'center',
+              gap: '4px',
+              padding: '4px 8px',
+              borderRadius: 'var(--radius-xs)',
+              background: 'var(--bg-inset)',
+              border: '1px solid var(--border-subtle)',
             }}
-          />
+          >
+            <div
+              style={{
+                width: '8px',
+                height: '8px',
+                borderRadius: '50%',
+                background: getDifficultyColor(exercise.difficulty),
+                flexShrink: 0,
+              }}
+            />
+            <span className="type-caption" style={{ fontSize: '10px', color: 'var(--text-secondary)' }}>
+              {getDifficultyLabel(exercise.difficulty)}
+            </span>
+          </div>
           
           {/* Arrow Icon */}
           {onClick && (

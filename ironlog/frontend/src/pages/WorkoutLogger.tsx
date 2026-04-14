@@ -6,13 +6,13 @@ import SetLoggerRow from '@/components/SetLoggerRow'
 import ExercisePicker from './ExercisePicker'
 import { useWorkoutStore } from '@/stores/workoutStore'
 import { useWorkoutSession } from '@/hooks/useWorkoutSession'
-import { Barbell, Plus, DotsThreeVertical, Check, Timer as TimerIcon } from '@phosphor-icons/react'
+import { Barbell, Plus, DotsThreeVertical, Check } from '@phosphor-icons/react'
 import { motion, AnimatePresence } from 'motion/react'
 
 export default function WorkoutLogger() {
   const navigate = useNavigate()
   const { activeSession, isLogging, startSession, addExercise, removeExercise, addSet, updateSet, logSet, updateExerciseNotes } = useWorkoutStore()
-  const { elapsedTime, saveSession } = useWorkoutSession()
+  const { saveSession } = useWorkoutSession()
   
   const [showExercisePicker, setShowExercisePicker] = useState(false)
   const [showFinishModal, setShowFinishModal] = useState(false)
@@ -42,12 +42,25 @@ export default function WorkoutLogger() {
   }
 
   const handleFinishWorkout = async () => {
-    if (!activeSession) return
+    console.log('handleFinishWorkout called')
+    console.log('activeSession:', activeSession)
     
+    if (!activeSession) {
+      console.log('No active session')
+      return
+    }
+    
+    console.log('Calling saveSession...')
     const success = await saveSession()
+    console.log('saveSession result:', success)
+    
     if (success) {
+      console.log('Success! Closing modal and navigating...')
       setShowFinishModal(false)
       navigate('/')
+    } else {
+      console.log('Failed to save session')
+      alert('Failed to save workout. Please try again.')
     }
   }
 
@@ -78,11 +91,7 @@ export default function WorkoutLogger() {
           <div className="workout-header-content">
             <h1 className="workout-title">{activeSession.session_name || 'Workout Session'}</h1>
             <div className="workout-meta">
-              <span className="workout-meta-item">
-                <TimerIcon size={16} weight="light" />
-                {elapsedTime}
-              </span>
-              <span className="workout-meta-item">{activeSession.exercises.reduce((sum, ex) => sum + ex.sets.filter(s => s.logged).length, 0)} sets</span>
+              <span className="workout-meta-item">{activeSession.exercises.reduce((sum, ex) => sum + ex.sets.filter(s => s.logged).length, 0)} sets logged</span>
             </div>
           </div>
           <button
@@ -129,23 +138,39 @@ export default function WorkoutLogger() {
       <AnimatePresence>
         {showFinishModal && (
           <>
-            <div className="modal-backdrop" onClick={() => setShowFinishModal(false)} />
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="modal-backdrop"
+              onClick={() => setShowFinishModal(false)}
+              style={{ zIndex: 100 }}
+            />
             <motion.div
               initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
               className="modal-container"
+              style={{ zIndex: 101 }}
             >
               <div className="card-raised">
                 <h2 className="type-h2">Finish Workout?</h2>
                 <p className="type-body-sm" style={{ margin: 'var(--space-3) 0 var(--space-5)', color: 'var(--text-secondary)' }}>
-                  {activeSession.exercises.reduce((sum, ex) => sum + ex.sets.filter(s => s.logged).length, 0)} sets · {activeSession.exercises.length} exercises · {elapsedTime}
+                  {activeSession.exercises.reduce((sum, ex) => sum + ex.sets.filter(s => s.logged).length, 0)} sets · {activeSession.exercises.length} exercises
                 </p>
                 <div className="modal-actions">
-                  <button className="btn-secondary" onClick={() => setShowFinishModal(false)}>
+                  <button 
+                    type="button"
+                    className="btn-secondary" 
+                    onClick={() => setShowFinishModal(false)}
+                  >
                     Keep Training
                   </button>
-                  <button className="btn-primary" onClick={handleFinishWorkout}>
+                  <button 
+                    type="button"
+                    className="btn-primary" 
+                    onClick={handleFinishWorkout}
+                  >
                     Finish
                   </button>
                 </div>

@@ -41,10 +41,17 @@ export function useWorkoutSession() {
   }
 
   const saveSession = async () => {
-    if (!activeSession) return
+    console.log('saveSession: Starting...')
+    console.log('saveSession: activeSession:', activeSession)
+    
+    if (!activeSession) {
+      console.log('saveSession: No active session!')
+      return false
+    }
 
     setIsSaving(true)
     try {
+      console.log('saveSession: Creating session...')
       // Create session
       const sessionResponse = await api.post('/workouts/sessions', {
         started_at: activeSession.started_at,
@@ -54,9 +61,11 @@ export function useWorkoutSession() {
       })
 
       const sessionId = sessionResponse.data.data.id
+      console.log('saveSession: Session created with ID:', sessionId)
 
       // Add exercises and sets
       for (const exercise of activeSession.exercises) {
+        console.log('saveSession: Adding exercise:', exercise.exercise_name)
         const exerciseResponse = await api.post(
           `/workouts/sessions/${sessionId}/exercises`,
           {
@@ -68,9 +77,13 @@ export function useWorkoutSession() {
         )
 
         const workoutExerciseId = exerciseResponse.data.data.id
+        console.log('saveSession: Exercise added with ID:', workoutExerciseId)
 
         // Add logged sets only
-        for (const set of exercise.sets.filter((s) => s.logged)) {
+        const loggedSets = exercise.sets.filter((s) => s.logged)
+        console.log('saveSession: Adding', loggedSets.length, 'logged sets')
+        
+        for (const set of loggedSets) {
           await api.post(`/workouts/exercises/${workoutExerciseId}/sets`, {
             set_order: set.set_order,
             set_type: set.set_type,
@@ -82,15 +95,21 @@ export function useWorkoutSession() {
         }
       }
 
+      console.log('saveSession: Finishing session...')
       // Finish session
       await api.patch(`/workouts/sessions/${sessionId}`, {
         finished_at: new Date().toISOString(),
       })
 
+      console.log('saveSession: Ending session in store...')
       endSession()
+      console.log('saveSession: Success!')
       return true
     } catch (error) {
-      console.error('Failed to save session:', error)
+      console.error('saveSession: Failed to save session:', error)
+      if (error.response) {
+        console.error('saveSession: Error response:', error.response.data)
+      }
       return false
     } finally {
       setIsSaving(false)
